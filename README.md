@@ -6,7 +6,7 @@ continually update this file as messages come in. It requires you to let Log4OM 
 ### Usage
 
 Place the script on a system that can hear UDP from Log4OM and has a way of putting the resulting HTML file on a webserver
-as fast as possible.
+as fast as possible. Edit the script as required (IP, port, output location, HTML formatting).
 
 ### Basic Operation
 
@@ -23,3 +23,6 @@ off and wait for data to come back. Support is planned to show if rig is in tran
 
 The "Radio Off" message happens after 15 seconds of no data. This is done by checking the elapsed time since the timestamo
 was last updated; which happens every time a message comes in.
+
+The script contains examples of how to add additional portions of HTML. This was done for nq4t.com. They are commented out by
+default. You will need to modify this as you require.
