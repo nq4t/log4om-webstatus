@@ -17,12 +17,51 @@ the following in a very basic way:
 
 - Your current VFO frequency and opearating mode.
 - Your TX offset/split if it exists
+- If your radio is off or Log4OM is not loaded
 
-If no data is received from Log4OM, because you turned your rig off or shutdown Log4OM; it will indicate your radio is
-off and wait for data to come back. Support is planned to show if rig is in transmit. 
+This now will determine if the radio is off or if Log4OM is not loaded by trying to request the Alive command over remote
+control. It will assue Log4OM is active if a response is received. In an effort to make the thing a bit less chatty, it 
+backs down to 60 second checks when not receiving data automatically. 
 
-The "Radio Off" message happens after 15 seconds of no data. This is done by checking the elapsed time since the timestamo
-was last updated; which happens every time a message comes in.
+Code could likely use more optimization. ChatGPT has been used to some degree but currently has issues giving complete 
+output. 
 
-The script contains examples of how to add additional portions of HTML. This was done for nq4t.com. They are commented out by
-default. You will need to modify this as you require.
+## History
+
+```
+02-FEB-2023: Initial Version. Shows status and basic offline message.
+04-APR-2023: Second Version. Now shows more percise offline message. Removes threads.
+```
+
+## License
+
+```
+BSD 3-Clause License
+
+Copyright (c) 2023, Jay Moore
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
