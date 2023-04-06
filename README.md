@@ -3,12 +3,12 @@
 This python program will take UDP messages blasted at it from Log4OM and will write it to a HTML file. It will
 continually update this file as messages come in. It requires you to let Log4OM automatically send status packets.
 
-### Usage
+## Usage
 
 Place the script on a system that can hear UDP from Log4OM and has a way of putting the resulting HTML file on a webserver
 as fast as possible. Edit the script as required (IP, port, output location, HTML formatting).
 
-### Basic Operation
+## Basic Operation
 
 Log4OM has a feature that has it send out UDP messages automatically as long as specific conditions are met. This python
 script/program will take in the messages sent at it's IP and parse a few things out of the XML. It writes this to an
@@ -25,6 +25,11 @@ backs down to 60 second checks when not receiving data automatically.
 
 Code could likely use more optimization. ChatGPT has been used to some degree but currently has issues giving complete 
 output. 
+
+## Examples
+
+This has been implemented on the sidebar/menu of [nq4t.com](https://nq4t.com). The actual webpage that's updated is served
+from my [QTH's webserver](https://log.nq4t.com/radio.html).
 
 ## History
 
