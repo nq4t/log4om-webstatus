@@ -1,3 +1,5 @@
+I largely stopped development two years ago and have since largely left the hobby. There will be no further development on this. QRT.
+
 # Log4OM Web Status
 
 This python program will take UDP messages blasted at it from Log4OM and will write it to a HTML file. It will
